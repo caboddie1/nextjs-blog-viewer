@@ -8,13 +8,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LoadingTrue: Story = {
+export const WithMessage: Story = {
     args: {
         message: "Unable to load posts",
     },
 };
 
-export const LoadingFalse: Story = {
+export const WithRetryCallback: Story = {
     args: {
         message: "Failed to fetch posts",
         onRetry: () => alert("Retrying..."),
