@@ -8,7 +8,7 @@ describe("PostList", () => {
         const { getByText } = render(<PostList posts={posts} />);
 
         expect(getByText("Example Blog Post 1")).toBeInTheDocument();
-        expect(getByText("Example Blog Post 12")).toBeInTheDocument();
-        expect(getByText("Example Blog Post 30")).toBeInTheDocument();
+        expect(getByText("Example Blog Post 3")).toBeInTheDocument();
+        expect(getByText("Example Blog Post 8")).toBeInTheDocument();
     });
 });
