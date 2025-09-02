@@ -16,27 +16,14 @@ export default function PostCard({ post }: Props) {
                 width={400}
                 height={200}
             />
-
             <div className="card-body d-flex flex-column">
                 <span className="badge bg-primary mb-2 align-self-start">
                     {post.category}
                 </span>
-
-                <h5 className="card-title">
-                    <a
-                        href={`/posts/${post.slug}`}
-                        className="stretched-link text-decoration-none"
-                    >
-                        {post.title}
-                    </a>
-                </h5>
-
-                <small className="text-muted">
-                    {new Date(post.publishedAt).toLocaleDateString()}
-                </small>
-
+                <h5 className="card-title text-primary">{post.title}</h5>
+                <small className="text-muted">{post.publishedAt}</small>
                 <p
-                    className="card-text mt-2 text-truncate"
+                    className="card-text mt-2 text-truncate text-secondary"
                     style={{ maxHeight: "4.5em" }}
                 >
                     {post.content}
