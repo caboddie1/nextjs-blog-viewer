@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React Coding Challenge – Blog Viewer (Next.js)
 
-## Getting Started
+A small **Next.js** app that fetches posts from [JSONPlaceholder](https://jsonplaceholder.org) and renders the results in a simple list/card UI. The project uses:
 
-First, run the development server:
+- **TypeScript**
+- **Bootstrap** for styling
+- **Storybook** for component docs
+- **ESLint** for linting
+- **Prettier** for code formatting
+- **Vitest + React Testing Library** for tests
+
+---
+
+## Project Setup
+
+This app uses the **Next.js App Router**.
+
+### Prerequisites
+
+- **Node.js** ≥ 18
+- **npm** or **yarn** (examples use npm)
+
+### Installation
+
+```bash
+git clone https://github.com/caboddie1/nextjs-blog-viewer.git
+cd nextjs-blog-viewer
+npm install
+```
+
+---
+
+## Running the App
+
+Start the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs at: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Storybook
 
-## Learn More
+Run Storybook to view components in isolation:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run storybook
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Storybook runs at: http://localhost:6006
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Build static Storybook:
 
-## Deploy on Vercel
+```bash
+npm run build-storybook
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tests
+
+This project uses **Vitest** + **React Testing Library**.
+
+Run tests:
+
+```bash
+npm test
+```
+
+## Continuous Integration (CI)
+
+This project includes a simple **GitHub Actions** CI pipeline.
+
+### Workflow
+
+- Runs on **pull requests** (for validation before merge).
+- Runs on **push to `main`** (to ensure the main branch always stays green).
+
+### Pipeline Tasks
+
+The pipeline checks:
+
+1. **Install dependencies**
+2. **Lint**
+3. **Run tests** (Vitest + React Testing Library)
+
+This ensures that broken code never gets merged into `main`.
+
+---
+
+## API
+
+Data is fetched from **JSONPlaceholder** (blog example):
+
+- Base: https://jsonplaceholder.org
+- Example endpoint (posts): `/posts`
+
+---
+
+## Available Scripts
+
+- `dev` – Run Next.js in development
+- `build` – Build the app for production
+- `start` – Start the production server
+- `lint` – Run linting
+- `test` – Run tests (Vitest)
+- `storybook` – Run Storybook
+- `build-storybook` – Build static Storybook
+
+---
+
+## What This Demonstrates
+
+- **Next.js App Router** structure
+- **Fetching** from JSONPlaceholder
+- **Loading & error** states
+- **List/Card** UI for posts
+- **Reusable UI components** (typed & accessible)
+- **Reusable Hooks** (typed)
+- **Bootstrap** styling
+- **Storybook** component docs
+- **Vitest + RTL** tests
+
+---
+
+## Implementation Notes
+
+- Components and utilities are **TypeScript**-typed.
+- Accessibility: form elements have labels and appropriate attributes.
+- Tests cover rendering and user interactions.
+
+---
+
+## Nice-to-Haves / Future Work
+
+- Post details route (`/posts/[id]`)
+- Comments & authors integration
+- Expanded accessibility tests and interaction tests in Storybook
+- Retry on error logic
+
+---
+
+## Submission Checklist
+
+- [x] README updated (this file)
+- [x] App runs locally (`npm run dev`)
+- [x] Storybook runs locally (`npm run storybook`)
+- [x] Tests pass locally (`npm test`)
+- [x] Pushed to GitHub (public)
+- [ ] Submitted
+
+---
