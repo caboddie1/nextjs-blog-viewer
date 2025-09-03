@@ -33,10 +33,16 @@ export function usePagination<T>({ array, perPage = 10 }: Props<T>) {
         );
     }
 
+    function goToPage(pageIndex: number) {
+        if (pageIndex < 0 || pageIndex >= numPages) return;
+        setCurrentPage(pageIndex);
+    }
+
     return {
         currentData,
         currentPage,
         navigatePage,
+        goToPage,
         isDisabled,
     };
 }
