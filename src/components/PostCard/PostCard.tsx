@@ -13,8 +13,8 @@ export default function PostCard({ post }: Props) {
                 src={post.image}
                 className="img-fluid rounded-top"
                 alt={post.title}
-                width={400}
-                height={200}
+                width={600}
+                height={300}
             />
             <div className="card-body d-flex flex-column">
                 <span className="badge bg-primary mb-2 align-self-start">
